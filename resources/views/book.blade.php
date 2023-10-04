@@ -13,12 +13,12 @@
         <a href="book-add" class="btn btn-primary">Add Data</a>
     </div>
 
-    <div class="mt-5">
-        @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-    @endif
-</div>
+            <div class="mt-5">
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+            @endif
+        </div>
 
     <div class="my-5">
         <table class="table">
@@ -27,6 +27,7 @@
                     <th>No.</th>
                     <th>Code</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -37,9 +38,14 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->book_code }}</td>
                     <td>{{ $item->title }}</td>
+                    <td>
+                        @foreach ($item->categories as $category)
+                            {{ $category->name }} <br>
+                        @endforeach
+                    </td>
                     <td>{{ $item->status }}</td>
                     <td>
-                        <a href="#">Edit</a>
+                        <a href="book-edit/{{ $item->slug }}">Edit</a>
                         <a href="#">Delete</a>
                     </td>
                 </tr>
