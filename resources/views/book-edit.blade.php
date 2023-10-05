@@ -20,7 +20,7 @@
             </div>
         @endif
 
-        <form action="book-add" method="post" enctype="multipart/form-data">
+        <form action="/book-edit/{{$book->slug}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="code" class="form-label">Code</label>
@@ -40,9 +40,9 @@
             <div class="mb-3">
                 <label for="currentImage" class="form-label" style="display:block">Current Image</label>
                 @if ($book->cover!='')
-                    <img src="{{ asset('storage/cover'.$book->cover) }}" alt="" width="300px">
+                    <img src="{{ asset('storage/cover/'.$book->cover) }}" alt="" width="100px">
                 @else
-                    <img src="{{ asset('assets/img/book1.png') }}" alt="" width="300px">
+                    <img src="{{ asset('assets/img/book1.png') }}" alt="" width="100px">
                 @endif
             </div>
 
@@ -65,7 +65,8 @@
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-success" type="submit">Save</button>
+                <button class="btn btn-success me-3" type="submit">Save</button>
+                <a href="/books" class="btn btn-danger">Cancel</a>
             </div>
         </form>
     </div>

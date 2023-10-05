@@ -10,7 +10,8 @@
     </h1>
 
     <div class="my-5 d-flex justify-content-end">
-        <a href="book-add" class="btn btn-primary">Add Data</a>
+        <a href="book-add" class="btn btn-primary me-3">Add Data</a>
+        <a href="book-deleted" class="btn btn-secondary">View Deleted Data</a>
     </div>
 
             <div class="mt-5">
@@ -45,8 +46,8 @@
                     </td>
                     <td>{{ $item->status }}</td>
                     <td>
-                        <a href="book-edit/{{ $item->slug }}">Edit</a>
-                        <a href="#">Delete</a>
+                        <a href="/book-edit/{{$item->slug}}" class="btn btn-primary">Edit</a>
+                        <a href="/book-delete/{{$item->slug}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

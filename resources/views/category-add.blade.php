@@ -26,7 +26,8 @@
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-success" type="submit">Save</button>
+                <button class="btn btn-success me-3" type="submit">Save</button>
+                <a href="/categories" class="btn btn-danger">Cancel</a>
             </div>
         </form>
     </div>
