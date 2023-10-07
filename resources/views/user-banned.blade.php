@@ -7,6 +7,10 @@
         Banned Users List
     </h1>
 
+    <div class="d-flex justify-content-end">
+        <a href="/users" class="btn btn-primary me-3 mt-5">Back</a>
+    </div>
+
     <div class="mt-5">
         @if (session('status'))
         <div class="alert alert-success">
