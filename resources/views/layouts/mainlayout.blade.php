@@ -24,7 +24,8 @@
 
           <div class="body-content h-100">
             <div class="row g-0 h-100">
-                <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarTogglerDemo02">              
+                <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarTogglerDemo02">
+                  @if (Auth::user())              
                         @if (Auth::user()->role_id == 1)
                             <a href="/dashboard" @if(request()->route()->uri == 'dashboard') class='active' @endif>Dashboard</a>
                             <a href="/books" @if(request()->route()->uri == 'books' || 
@@ -43,11 +44,16 @@
                               request()->route()->uri == 'user-ban/{slug}' || 
                               request()->route()->uri == 'user-banned') class='active' @endif>Users</a>
                             <a href="/rent-logs" @if(request()->route()->uri == 'rent-logs') class='active' @endif>Rent Log</a>
+                            <a href="/" @if(request()->route()->uri == '/') class='active' @endif>Book List</a>
                             <a href="/logout">Logout</a>
                         @else
                             <a href="/profile" @if(request()->route()->uri == 'profile') class='active' @endif>Profile</a>
+                            <a href="/" @if(request()->route()->uri == '/') class='active' @endif>Book List</a>
                             <a href="/logout">Logout</a>
                         @endif
+                      @else
+                      <a href="/login">Login</a>
+                  @endif
                 </div>
                 <div class="content p-3 col-lg-10">
                     @yield('content')
