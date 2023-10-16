@@ -45,6 +45,7 @@
                               request()->route()->uri == 'user-banned') class='active' @endif>Users</a>
                             <a href="/rent-logs" @if(request()->route()->uri == 'rent-logs') class='active' @endif>Rent Log</a>
                             <a href="/" @if(request()->route()->uri == '/') class='active' @endif>Book List</a>
+                            <a href="/book-rent" @if(request()->route()->uri == 'book-rent') class='active' @endif>Book Rent</a>
                             <a href="/logout">Logout</a>
                         @else
                             <a href="/profile" @if(request()->route()->uri == 'profile') class='active' @endif>Profile</a>
