@@ -3,7 +3,10 @@
 @section('title', 'Profile')
     
 @section('content')
-    <h1>
-        Profile
-    </h1>
+    
+<div class="mt-5">
+    <h1>You Rent Log</h1>
+    <x-rent-log-table :rentlog='$rent_logs' />
+</div>
+
 @endsection

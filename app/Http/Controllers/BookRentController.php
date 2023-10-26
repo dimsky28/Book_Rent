@@ -14,7 +14,7 @@ class BookRentController extends Controller
 {
     public function index()
     {
-        $users = User::where('id', '!=', 1)->get();
+        $users = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
         $books = Book::all();
         return view('book-rent', ['users' => $users, 'books' => $books]);   
     }
@@ -56,9 +56,12 @@ class BookRentController extends Controller
                 } catch (\Throwable $th) {
                     DB::rollBack();
                 }
-            }
-            
+            }   
         }
+    }
 
+    public function returnBook()
+    {
+        return view('return-book');
     }
 }

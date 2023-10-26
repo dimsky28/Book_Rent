@@ -38,4 +38,9 @@
             <input type="text" class="form-control" readonly value="{{$user->status}}">
        </div>
     </div>
+
+    <div class="mt-5">
+        <h1>User Rent Log</h1>
+        <x-rent-log-table :rentlog='$rent_logs' />
+    </div>
 @endsection
