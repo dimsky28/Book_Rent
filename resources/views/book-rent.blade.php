@@ -11,11 +11,12 @@
 
         <div class="mt-5">
             @if (session('message'))
-            <div class="alert {{session('alert-class')}}">
-                {{ session('message') }}
-        @endif
-    </div>
-
+                <div class="alert {{session('alert-class')}}">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
+        
         <form action="book-rent" method="post">
             @csrf
             <div class="mb-3">
